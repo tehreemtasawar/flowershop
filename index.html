@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Task 3: Theme switcher button at the top of the page -->
+    <div id="theme-bar">
+        <button id="theme-btn" type="button">Toggle Light/Dark Mode</button>
+    </div>
+
+    <header>
+        <h1>Flowers Shop</h1>
+        <!-- Task 8: Dynamic opening status banner under the h1 -->
+        <p id="status"></p>
+        <p>Welcome to our shop. We have fresh flowers for every occasion</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#bouquets">Bouquets</a></li>
+            <li><a href="#how-to-order">How to Order</a></li>
+            <li><a href="#order">Order</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="hero">
+            <img src="https://asset.bloomnation.com/c_fill,d_vendor:global:catalog:product:image.png,f_auto,fl_preserve_transparency,h_2000,q_auto,w_2000/v1774580174/vendor/7450/catalog/product/2/0/20240709043919_file_668d67b7050e5_668d689ec7abc.png" alt="Fresh bouquet of flowers" width="500" height="500">
+            <p>Fresh flowers</p>
+        </section>
+
+        <!-- Task 6: Read More article -->
+        <section id="story">
+            <article id="about">
+                <h2>Our Story</h2>
+                <p>Our shop started as a small stall that sold fresh roses to families in the neighbourhood.</p>
+                <p id="extra-text" class="hidden-text">Today we work with local growers every morning, so every bouquet is arranged the same day it is delivered. From birthdays to mehndi and wedding functions, we help make every occasion colourful.</p>
+                <button id="read-more-btn" type="button">Read More</button>
+            </article>
+        </section>
+
+        <section id="bouquets">
+            <h2>Our Bouquets</h2>
+
+            <article class="card">
+                <h3>Gulab Bouquet</h3>
+                <p>A bouquet of fresh red and pink roses, commonly used for birthdays and family events.</p>
+            </article>
+
+            <article class="card">
+                <h3>Seasonal Mix</h3>
+                <p>A mix of gerberas, lilies, and carnations, based on what is available locally in season.</p>
+            </article>
+
+            <article class="card">
+                <h3>Shaadi Special</h3>
+                <p>An arrangement of gainda (marigold) and roses, used for mehndi and wedding functions.</p>
+            </article>
+        </section>
+
+        <section id="how-to-order">
+            <h2>How to Order</h2>
+            <ol type="A">
+                <li>Choose your bouquet</li>
+                <li>Select the occasion</li>
+                <li>Add a personal message card</li>
+                <li>Place your order</li>
+            </ol>
+
+            <h2>Price List</h2>
+
+            <!-- Task 7: Filter buttons -->
+            <div id="filters">
+                <button type="button" class="filter-btn" data-filter="all">All</button>
+                <button type="button" class="filter-btn" data-filter="everyday">Everyday</button>
+                <button type="button" class="filter-btn" data-filter="wedding">Wedding</button>
+            </div>
+
+            <table>
+                <caption>Bouquet Prices</caption>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Bouquet</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-category="everyday">
+                        <td><input type="checkbox" class="bouquet-check" data-price="800"></td>
+                        <td>Gulab Bouquet</td>
+                        <td>Rs. 800</td>
+                    </tr>
+                    <tr data-category="everyday">
+                        <td><input type="checkbox" class="bouquet-check" data-price="1200"></td>
+                        <td>Seasonal Mix</td>
+                        <td>Rs. 1200</td>
+                    </tr>
+                    <tr data-category="wedding">
+                        <td><input type="checkbox" class="bouquet-check" data-price="2500"></td>
+                        <td>Shaadi Special</td>
+                        <td>Rs. 2500</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Task 4: Order total -->
+            <p id="total">Total: Rs. 0</p>
+        </section>
+
+        <section id="order">
+            <h2>Place Your Order</h2>
+            <form action="#" method="post">
+
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <!-- Task 5: Birth year -->
+                <label for="birth-year">Birth Year:</label><br>
+                <input type="text" id="birth-year" name="birth-year" placeholder="e.g. 2002"><br><br>
+
+                <p>Occasion:</p>
+                <input type="radio" id="birthday" name="occasion" value="birthday">
+                <label for="birthday">Birthday</label><br>
+
+                <input type="radio" id="wedding" name="occasion" value="wedding">
+                <label for="wedding">Wedding</label><br>
+
+                <input type="radio" id="sympathy" name="occasion" value="sympathy">
+                <label for="sympathy">Sympathy</label><br><br>
+
+                <p>Add-ons:</p>
+                <input type="checkbox" id="card" name="addon" value="greeting card">
+                <label for="card">Greeting Card</label><br>
+
+                <input type="checkbox" id="chocolate" name="addon" value="chocolate box">
+                <label for="chocolate">Chocolate Box</label><br>
+
+                <input type="checkbox" id="teddy" name="addon" value="teddy bear">
+                <label for="teddy">Teddy Bear</label><br><br>
+
+                <!-- Task 9: Special notes with character counter -->
+                <label for="special-notes">Special Instructions:</label><br>
+                <textarea id="special-notes" name="special-notes" maxlength="100" rows="4"></textarea>
+                <p id="char-count">100 characters remaining</p>
+
+                <button type="submit">Submit Order</button>
+
+            </form>
+
+            <!-- Task 1 and Task 5 messages appear here -->
+            <p id="form-message"></p>
+            <p id="discount-message"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Flowers Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
