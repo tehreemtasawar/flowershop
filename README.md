@@ -38,7 +38,7 @@ Flower-Shop/
 
 You can view the live project directly here:
 
-**[View Live Flower Shop Website](INSERT-GITHUB-PAGES-LINK-HERE)**
+**[View Live Flower Shop Website](https://tehreemtasawar.github.io/flowershop/)**
 
 Alternatively, to run it locally:
 
